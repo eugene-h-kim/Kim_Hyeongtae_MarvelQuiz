@@ -1,19 +1,8 @@
-q1 = {
-    "question": "Do you live on earth? yes / no: ",
-    "yes" : 0,
-    "no" : 10
-}
+from components.quizQuestions import questions
+from components import vars
 
-q2 = {
-    "question" : "Are you human? yes / no: ",
-    "yes" : 0,
-    "no" : 10
-}
+answer1 = input(questions["q1"]["question"])
 
-count = 1
+# after you get the answer, add it to the total
 
-ans1 = q1[input(q1["question"])]
-print(ans1)
 
-ans2 = q2[input(q2["question"])]
-print(ans2)
