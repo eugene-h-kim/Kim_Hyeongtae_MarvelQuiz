@@ -1,19 +1,22 @@
-q1 = {
-    "question": "Do you live on earth? yes / no: ",
-    "yes" : 0,
-    "no" : 10
-}
+from components.quizQuestions import questions
+from components import vars, quizTally
 
-q2 = {
-    "question" : "Are you human? yes / no: ",
-    "yes" : 0,
-    "no" : 10
-}
+answer1 = questions["q1"][input(questions["q1"]["question"])]
+print(answer1)
 
-count = 1
+vars.quizTotal += answer1
+print("+++++++++++++++++++++++++++++++\n")
 
-ans1 = q1[input(q1["question"])]
-print(ans1)
+answer2 = questions["q2"][input(questions["q2"]["question"])]
+print(answer2)
 
-ans2 = q2[input(q2["question"])]
-print(ans2)
+vars.quizTotal += answer2
+print("+++++++++++++++++++++++++++++++\n")
+
+print("total so far: " + str(vars.quizTotal) + "\n")
+
+
+# after answer all the questions, figure out who your character is
+quizTally.total(vars.quizTotal)
+
+
